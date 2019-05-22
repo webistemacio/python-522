@@ -1,0 +1,23 @@
+
+html,
+body {
+  height: 100%;
+}
+
+.alerts {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+}
+
+.logo {
+  width: 3rem;
+}
+
+.sign-in,
+.docker {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

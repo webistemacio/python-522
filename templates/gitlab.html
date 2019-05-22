@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+
+{% block header %}
+<strong>Gitlab</strong>
+{% endblock %}
+
+{% block content %}
+<h2>Usuários</h2>
+<table class="table table-hover table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Email</th>
+      <th scope="col">Usuário</th>
+      <th scope="col">Status</th>
+      <th scope="col">Admin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>== Email do Usuário ==</td>
+      <td>== Nome do Usuário ==</td>
+      <td>== Status do Usuário ==</td>
+      <td>== Usuário é Admin ==</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Projetos</h2>
+<table class="table table-hover table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nome do Projeto</th>
+      <th scope="col">Link SSH</th>
+      <th scope="col">Dono</th>
+      <th scope="col">Caminho</th>      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>== Nome do Projeto ==</td>
+      <td>== SSH do Usuário ==</td>
+      <td>== Username do Dono do Projeto ==</td>
+      <td>== Caminho do Projeto ==</td>      
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

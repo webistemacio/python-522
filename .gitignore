@@ -1,0 +1,13 @@
+
+# vscode settinsg
+.vscode/
+
+# python virtual env
+env/
+
+# pycache folders
+__pycache__
+
+# dotenv settings
+.env
+
