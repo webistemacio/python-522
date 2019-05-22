@@ -22,7 +22,7 @@
 
 {% block content %}
 <section id="users" class="{{ 'hidden' if context.current_tab == 'projects' else '' }}">
-  <header>
+  <header class="mb-3">
     <h2>Usuários</h2>
   </header>
   <table class="table table-hover table-striped">
@@ -45,7 +45,7 @@
   </table>
 </section>
 <section id="projects" class="{{ 'hidden' if context.current_tab == 'users' else '' }}">
-  <header>
+  <header class="mb-3">
     <h2>Projetos</h2>
   </header>
   <table class="table table-hover table-striped">
