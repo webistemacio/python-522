@@ -8,6 +8,7 @@ def get_gitlab():
     
     context = {
         'page': 'gitlab',
+        'current_tab': flask.request.args.get('current_tab') or 'users',
         'route': {
             'is_public': False
         },
