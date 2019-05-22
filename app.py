@@ -23,15 +23,6 @@ def index():
     
 if __name__ == '__main__':
 
-    try:
-        user = 'cn=admin,dc=dexter,dc=com,dc=br'
-        password = '4linux'
-
-        server = ldap3.Server('ldap://localhost')
-        connection = ldap3.Connection(server, user, password, auto_bind=True)
-    except ldap3.core.exceptions.LDAPSocketOpenError:
-        pass
-
     current_module = os.path.dirname(os.path.curdir)
     sys.path.append(current_module)
 
