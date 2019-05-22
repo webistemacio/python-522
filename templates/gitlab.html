@@ -9,10 +9,10 @@
     <nav>
       <ul class="nav nav-pills">
         <li class="nav-item">
-          <a class="nav-link {{ 'active' if context.current_tab == 'users' else '' }}" href="/gitlab?current_tab=users">Usuários</a>
+          <a class="nav-link {{ 'active' if context.current_tab == 'users' else '' }}" href="/gitlab?current_tab=users" title="Ver usuários">Usuários</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ 'active' if context.current_tab == 'projects' else '' }}" href="/gitlab?current_tab=projects">Projetos</a>
+          <a class="nav-link {{ 'active' if context.current_tab == 'projects' else '' }}" href="/gitlab?current_tab=projects" title="Ver projetos">Projetos</a>
         </li>
       </ul>
     </nav>
