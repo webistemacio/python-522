@@ -1,4 +1,3 @@
-
 import flask
 import docker
 
@@ -7,44 +6,35 @@ blueprint = flask.Blueprint('docker', __name__)
 connection = docker.DockerClient()
 
 @blueprint.route('/docker', methods=[ 'GET' ])
-def get_docker():
-	container = connection.containers.get('15b718943bc3')
+def get_docker():    
+	
 	context = {
 		'page': 'docker',
 		'route': {
 			'is_public': False
 		},
-		'container':container
+		'containers': connection.containers.list(all=True)
 	}
 
 	return flask.render_template('docker.html', context=context)
 
-@blueprint.route('/docker/start', methods=[ 'GET' ])
-def start_docker():
-	container = connection.containers.get('15b718943bc3')
-	if not container:
-		flask.flash('Container não encontrado', 'Danger')
-	elif  container.status != 'running':
+@blueprint.route('/docker/start/<string:containerid>', methods=[ 'GET' ])
+def start_docker(containerid):
+	try:
+		container = connection.containers.get(containerid)
 		container.start()
-		flask.flash('Container iniciado', 'Success')
-	else:
-		flask.flash('Container já está iniciado', 'info')
+	except:
+		pass
 
 	return flask.redirect('/docker')
 
-
-@blueprint.route('/docker/stop', methods=[ 'GET' ])
-def stop_docker():
-	container = connection.containers.get('15b718943bc3')
-	if not container:
-		flask.flash('Container não encontrado', 'Danger')
-	elif container.status == 'running':
+@blueprint.route('/docker/stop/<string:containerid>', methods=[ 'GET' ])
+def stop_docker(containerid):
+	try:
+		container = connection.containers.get(containerid)
 		container.stop()
-		flask.flash('Container parado', 'Success')
-	else:
-		flask.flash('Container já está parado', 'info')
+	except:
+		pass
 
+	
 	return flask.redirect('/docker')
-
-	return 'stop docker'
-
